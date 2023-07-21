@@ -4,7 +4,6 @@
 
     $bookList = new BookList();
 
-    // Thêm sách vào danh sách
     $book1 = new Book();
     $book1->setBookInfo('Sach 1', 'Tac Gia B', 'Nha Xuat Ban Q', 2022, array('Chuong 1', 'Chuong 2'));
     $bookList->addBook($book1);
@@ -17,7 +16,6 @@
     $book3->setBookInfo('Sach 3', 'Tac Gia C', 'Nha Xuat Ban E', 2021, array('Chuong 1'));
     $bookList->addBook($book3);
 
-    // Xử lý yêu cầu sắp xếp
     if (isset($_GET['sapXep'])) {
         $sort = $_GET['sapXep'];
         switch ($sort) {
@@ -31,16 +29,13 @@
                 $bookList->sortBooksByPublicationYear();
                 break;
             default:
-                // Sắp xếp theo tên tác giả nếu không xác định yêu cầu
                 $bookList->sortBooksByAuthor();
                 break;
         }
     }
 
-    // Lấy danh sách sách đã được sắp xếp
     $books = $bookList->getBooks();
 
-    // Hiển thị trang chủ
     $pageTitle = 'Trang chủ - Quản lý sách';
     $contentView = 'views/home.php';
     require 'views/layout.php';
