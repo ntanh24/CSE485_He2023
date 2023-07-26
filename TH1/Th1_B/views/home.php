@@ -24,7 +24,7 @@
                 <td><?php echo $bookInfo['namXuatBan']; ?></td>
                 <td><?php echo implode(', ', $bookInfo['soChuong']); ?></td>
             </tr>
-        <?php } ?>
+            <?php } ?>
     </table>
     </table>
 
