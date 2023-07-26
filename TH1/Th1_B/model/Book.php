@@ -13,6 +13,14 @@
         private $namXuatBan;
         private $soChuong;
 
+        // public function __construct($tenSach, $tacGia, $nhaXuatBan, $namXuatBan, $soChuong) {
+        //     $this->tenSach = $tenSach;
+        //     $this->tacGia = $tacGia;
+        //     $this->nhaXuatBan = $nhaXuatBan;
+        //     $this->namXuatBan = $namXuatBan;
+        //     $this->soChuong = $soChuong;
+        // }
+
         public function setBookInfo($tenSach, $tacGia, $nhaXuatBan, $namXuatBan, $soChuong) {
             $this->tenSach = $tenSach;
             $this->tacGia = $tacGia;
