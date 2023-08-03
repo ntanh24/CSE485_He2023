@@ -1,3 +1,9 @@
+<!--Sự kiện POST ko thực thi trong ngữ cảnh do đâu?-->
+<!--Trong khi tôi vừa Demo kịch bản tương tự ,mà nó vẫn chạy-->
+
+<!--Câu chuyện 1: Phải chăng do modal của Bootstrap > Cần xủ lý sự kiện này bằng Javascript-->
+<!--Câu chuyện 2: Phải chăng do tôi đang include Controller ... > Sai vị trí đường dẫn ko?-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +19,11 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body class="bg-gray">
+<?php
+    if(isset($_GET['success'])){
+        echo "<h4 class='text-success text-center'>Bạn đã đăng kí thành công</h4>";
+    }
+?>
 <!-- Login -->
 <div class="container mt-5 pt-5 d-flex flex-column flex-lg-row justify-content-evenly">
     <!-- heading -->
@@ -48,85 +59,27 @@
                         </div>
                         <!-- body -->
                         <div class="modal-body">
-                            <form>
+                            <form action="index.php?c=user&a=add" method="post">
                                 <!-- names -->
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" class="form-control" placeholder="First name" />
+                                        <input type="text" class="form-control" placeholder="Username" name="txtUsername"/>
                                     </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" placeholder="Surname" />
-                                    </div>
+<!--                                    <div class="col">-->
+<!--                                        <input type="text" class="form-control" placeholder="Surname" />-->
+<!--                                    </div>-->
                                 </div>
                                 <!-- email & pass -->
-                                <input type="email" class="form-control my-3" placeholder="Mobile number or email address" />
-                                <input type="password" class="form-control my-3" placeholder="New password" />
-                                <!-- DOB -->
-                                <div class="row my-3">
-                                    <span class="text-muted fs-7">Date of birth <i class="fas fa-question-circle" data-bs-toggle="popover" type="button" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
-                                    <div class="col">
-                                        <select class="form-select">
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <select class="form-select">
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <select class="form-select">
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- gender -->
-                                <div class="row my-3">
-                                    <span class="text-muted fs-7">Gender <i class="fas fa-question-circle" data-bs-toggle="popover" type="button" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
-                                    <div class="col">
-                                        <div class="border rounded p-2">
-                                            <label class="form-check-label" for="flexRadioDefault1">Male </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="border rounded p-2">
-                                            <label class="form-check-label" for="flexRadioDefault1">Female </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="border rounded p-2">
-                                            <label class="form-check-label" for="flexRadioDefault1">Custom </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- gender select -->
-                                <div class="d-none" id="genderSelect">
-                                    <select class="form-select">
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <div class="my-3">
-                                        <span class="text-muted fs-7">Your pronoun is visible to everyone.</span>
-                                        <input type="text" class="form-control" placeholder="Gender (optional)" />
-                                    </div>
-                                </div>
+                                <input type="email" class="form-control my-3" placeholder="Email address" name="txtEmail"/>
+                                <input type="password" class="form-control my-3" placeholder="New password" name="txtPassword"/>
+
                                 <!-- disclaimer -->
                                 <div>
                                     <span class="text-muted fs-7">By clicking Sign Up, you agree to our Terms, Data Policy....</span>
                                 </div>
                                 <!-- btn -->
                                 <div class="text-center mt-3">
-                                    <button type="button" class="btn btn-success btn-lg" data-bs-dismiss="modal">Sign Up</button>
+                                    <button type="submit" class="btn btn-success btn-lg" data-bs-dismiss="modal">Sign Up</button>
                                 </div>
                             </form>
                         </div>

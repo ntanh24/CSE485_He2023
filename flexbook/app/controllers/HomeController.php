@@ -18,4 +18,10 @@ class HomeController
         //Gọi ra View
         include("app/views/feed.php");
     }
+
+    public function error(){
+        include("app/views/error.php");
+    }
+
+
 }

@@ -4487,7 +4487,7 @@
                         <div>
                             <p><?= $post->getContent() ?></p>
                             <img
-                                src="https://source.unsplash.com/random/12"
+                                src="<?= $post->getPostImage() ?>"
                                 alt="post image"
                                 class="img-fluid rounded"
                         />

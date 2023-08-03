@@ -1,10 +1,11 @@
 <?php
+include "app/repositories/UserRepository.php";
 class UserController {
     public function index(){
-        //Lấy dữ liệu từ Model
-
-        //Đổ ra View
-        echo "index function of UserController";
+        //Gọi dữ liệu ra
+        $userRepo = new UserRepository();
+        $users = $userRepo->getAllUsers();
+        include "app/views/admin/users/index.php";
     }
 
     public function home(){
@@ -12,36 +13,29 @@ class UserController {
     }
 
     public function add(){
-        echo "add function of UserController";
+        //Lấy các giá trị từ FORM
+        if(isset($_POST['txtUsername'])){
+            $username  = $_POST['txtUsername'];
+        }
+        if(isset($_POST['txtEmail'])){
+            $email  = $_POST['txtEmail'];
+        }
+        if(isset($_POST['txtPassword'])){
+            $password  = $_POST['txtPassword'];
+        }
+        //Tạo và thiết lập đối tượng User
+        $user = new User();
+        $user->setUsername($username);
+        $user->setEmail($email);
+        $user->setPassword($password);
+        //Truyền và gọi tới saveRegister() của UserRepository
+        $userRepo = new UserRepository();
+//        $userRepo->saveRegister($user);
+        if($userRepo->saveRegister($user) == true){
+            header("Location:index.php?c=home&a=index&success=true");
+        }else{
+            header("Location:index.php?c=home&a=error&success=false");
+        }
     }
-    // Here we'll have an instance of the User model
-//    private $model;
-//
-//    // We'll inject the model instance through the constructor
-//    public function __construct($model) {
-//        $this->model = $model;
-//    }
 
-//    // Register a new user
-//    public function register() {
-//        // Here we'll get the user input, validate it, and pass it to the model
-//        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//            // Sanitize input data and assign it to model
-//            $this->model->first_name = htmlspecialchars(strip_tags($_POST['first_name']));
-//            $this->model->last_name = htmlspecialchars(strip_tags($_POST['last_name']));
-//            $this->model->email = htmlspecialchars(strip_tags($_POST['email']));
-//            $this->model->password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-//
-//            // Call the model's register method
-//            if ($this->model->register()) {
-//                // Redirect to the login page, or wherever you want
-//                header('Location: /login');
-//            } else {
-//                // Handle the error
-//                echo "Something went wrong.";
-//            }
-//        }
-//    }
-
-    // Other controller methods like login, logout, profile go here...
 }
