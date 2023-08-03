@@ -6,7 +6,7 @@ class PostRepository{
         //Kết nối tới CSDL: MySQLi procedural, MySQLi OOP, PDO*
         //1. Kết nối DB Server
         try {
-            $conn = new PDO("mysql:host=localhost;dbname=flexbook", 'root', 'abc');
+            $conn = new PDO("mysql:host=localhost;dbname=facebookclone", 'root', '244');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //2. Thực hiện truy vấn
             $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 10 ";

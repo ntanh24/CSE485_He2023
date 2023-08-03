@@ -4,7 +4,7 @@ class Database {
     private $host = 'localhost';
     private $db_name = 'facebookclone';
     private $username = 'root';
-    private $password = 'abc';
+    private $password = '244';
     public $conn;
 
     // Get the database connection
