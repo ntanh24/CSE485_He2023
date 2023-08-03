@@ -1,7 +1,7 @@
 <?php
-
 class User {
-    // Properties
+
+    // User properties
     private $user_id;
     private $username;
     private $email;
@@ -10,6 +10,10 @@ class User {
     private $bio;
     private $created_at;
     private $updated_at;
+
+
+
+    // Other methods to read, update, delete users go here...
 
     /**
      * @param $user_id
@@ -21,9 +25,8 @@ class User {
      * @param $created_at
      * @param $updated_at
      */
-
-    // Methods
-    public function __construct($user_id, $username, $email, $password, $profile_picture, $bio, $created_at, $updated_at) {
+    public function __construct($user_id, $username, $email, $password, $profile_picture, $bio, $created_at, $updated_at)
+    {
         $this->user_id = $user_id;
         $this->username = $username;
         $this->email = $email;
@@ -37,7 +40,7 @@ class User {
     /**
      * @return mixed
      */
-    public function getUserID()
+    public function getUserId()
     {
         return $this->user_id;
     }
@@ -45,7 +48,7 @@ class User {
     /**
      * @param mixed $user_id
      */
-    public function setUserID($user_id): void
+    public function setUserId($user_id): void
     {
         $this->user_id = $user_id;
     }
@@ -53,7 +56,7 @@ class User {
     /**
      * @return mixed
      */
-    public function getUserName()
+    public function getUsername()
     {
         return $this->username;
     }
@@ -61,7 +64,7 @@ class User {
     /**
      * @param mixed $username
      */
-    public function setUserName($username): void
+    public function setUsername($username): void
     {
         $this->username = $username;
     }
@@ -162,55 +165,5 @@ class User {
         $this->updated_at = $updated_at;
     }
 
-    //get/set
-    public function setUserInfo($user_id, $username, $email, $password, $profile_picture, $bio, $created_at, $updated_at) {
-        $this->user_id = $user_id;
-        $this->username = $username;
-        $this->email = $email;
-        $this->password = $password;
-        $this->profile_picture = $profile_picture;
-        $this->bio = $bio;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-    }
-
-    // public function getID() {
-    //     return $this->user_id;
-    // }
-    // public function getUserName() {
-    //     return $this->username;
-    // }
-    // public function getEmail() {
-    //     return $this->email;
-    // }
-    // public function getPassword() {
-    //     return $this->password;
-    // }
-    // public function getProfile() {
-    //     return $this->profile_picture;
-    // }
-    // public function getBio() {
-    //     return $this->bio;
-    // }
-    // public function getCreated() {
-    //     return $this->created_at;
-    // }
-    // public function getUpdated() {
-    //     return $this->updated_at;
-    // }
-
-
-    public function getUserInfo() {
-        return array(
-            'user_id' => $this->user_id,
-            'username' => $this->username,
-            'email' => $this->email,
-            'password' => $this->password,
-            'profile_picture' => $this->profile_picture,
-            'bio' => $this->bio,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        );
-    }
 
 }
