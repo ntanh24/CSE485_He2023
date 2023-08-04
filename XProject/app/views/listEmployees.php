@@ -7,8 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-    <div class="">
-        <h3>LIST OF EMPLOYEES</h3>
+    <div class="container">
+        <div class="d-flex">
+            <h3>LIST OF EMPLOYEES</h3>
+            <button>Add New Employee</button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
