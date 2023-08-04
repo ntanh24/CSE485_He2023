@@ -12,6 +12,6 @@ class HomeController {
         $users = $userRepoObj->getAllUsers();
 
         //Render du lieu lay duoc ra HomePage
-        include("app/views/feed.php");
+        include("app/views/user.php");
     }
 }
