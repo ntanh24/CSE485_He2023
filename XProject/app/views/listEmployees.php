@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="d-flex">
+        <div class="d-flex justify-content-between">
             <h3>LIST OF EMPLOYEES</h3>
             <button>Add New Employee</button>
         </div>
