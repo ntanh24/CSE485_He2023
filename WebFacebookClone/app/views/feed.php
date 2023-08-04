@@ -20,13 +20,10 @@
                     <th>Bio</th>
                     <th >Created At</th>
                     <th>Updated AT</th>
-                    <!-- <th>Sửa</th>
-                    <th>Xoá</th> -->
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($users as $user) { ?>
-                    <!-- $userInfo = $user->getUserInfo(); ?> -->
                 <tr>
                     <td><?= $user->getUserID(); ?></td>
                     <td><?= $user->getUserName(); ?></td>
